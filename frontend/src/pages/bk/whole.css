@@ -1,0 +1,244 @@
+.whole {
+    background-color: rgb(255, 255, 255);
+  }
+.page {
+    margin:0 auto;
+    width: 98%;
+  }
+.pic1 {
+    width: 100%;
+  }
+.part2 {
+    text-align: center;
+}
+.part21 {
+    font-size: 300%;
+    font-weight: 700;
+    padding: 1%;
+    align-content: center;
+}
+.part22 {
+    color: rgba(66, 66, 66, 0.877);
+    margin: auto;
+    width: 60%;
+    font-size: 150%;
+    font-weight: 400;
+    padding: 0%;
+    align-content: center;
+}
+.part23 {
+    font-weight: 300;
+    color: blueviolet;
+    padding: 2%;
+    align-content: center;
+}
+.part31 {
+    margin: auto;
+    padding: 15%;
+    width: 100%;
+}
+.part311 {
+    padding: 2%;
+    font-size: 200%;
+    font-weight: 700;
+    align-content: center;
+}
+.part312 {
+    padding: 2%;
+    font-size: 150%;
+    font-weight: 400;
+    align-content: center;
+}
+.part313 {
+    padding: 2%;
+    font-size: 200%;
+    font-weight: 700;
+    align-content: center;
+}
+.part32 {
+    padding: 5%;
+}
+.pic2 {
+    width: 80%;
+}
+.part4 {
+    padding: 3%;
+}
+.part41 {
+    margin-left: 9%;
+    width: 90%;
+}
+.part42 {
+    margin-left: 1%;
+    width: 90%;
+}
+.part43 {
+    margin-top: 2%;
+    margin-left: 9%;
+    width: 90%;
+}
+.part44 {
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 90%;
+}
+.card1 {
+    width: 100%;
+    background-color: rgb(239, 255, 254);
+}
+.card2 {
+    width: 100%;
+    background-color: rgb(255, 239, 249);
+}
+.card3 {
+    width: 100%;
+    background-color: rgb(253, 255, 239);
+}
+.card4 {
+    width: 100%;
+    background-color: rgb(239, 255, 240);
+}
+.pic3 {
+    margin: auto;
+    width: 60%;
+    
+}
+.part4wordhaed {
+    font-size: 500%;
+    font-weight: 213;
+}
+.pic4 {
+    width: 90%;
+}
+
+.part51 {
+    background-color: rgb(203, 247, 255);
+}
+.part511 {
+    padding: 10%;
+}
+.part512 {
+    width: 100%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10%;
+}
+.part512h {
+    font-size: 250%;
+    font-weight: 500;
+
+}
+.part512c {
+    font-size: 150%;
+    font-weight: 400;
+
+}
+.part512b {
+    margin-top: 5%;
+
+}
+.part52 {
+    background-color: rgb(255, 246, 195);
+}
+.part53 {
+    background-color: rgb(246, 225, 255);
+}
+.part532h {
+    font-size: 230%;
+    font-weight: 500;
+
+}
+.menubar {
+    
+    margin:0 auto;
+    width: 98%;
+
+    
+    left: 1%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.menuword {
+    font-weight: 400;
+    font-size:130%;
+    color: rgb(0, 0, 0);
+}
+.menulistword {
+    padding: 5%;
+    font-weight: 400;
+    font-size: 130%;
+    color: rgb(0, 0, 0);
+}
+.menuico {
+    color: rgba(158, 149, 149, 0.884);
+}
+.menuitem234 {
+    padding: 4%;
+
+
+}
+.menuitem1 {
+    padding: 20%;
+    max-height:110%;
+
+
+}
+.menuitem2 {
+
+    max-height:110%;
+
+
+}
+.menuitem3 {
+    max-height:110%;
+
+
+
+}
+.menuitem4 {
+
+    max-height:110%;
+
+}
+.menuitem5 {
+
+    padding: 6%;
+
+}
+.searchico {
+
+    color: rgb(76, 14, 190);
+
+}
+.menuitem6 {
+    
+    color: blueviolet;
+    padding: 15%;
+
+}
+.pic5 {
+    width: 100%;
+    margin: auto;
+}
+.nowalletpart1 {
+    margin: auto;
+    width: 50%;
+}
+.nowalletpart2 {
+    margin: auto;
+    width: 70%;
+    padding: 3%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 200%;
+}
+.nowalletpart3 {
+    margin: auto;
+    width: 70%;
+    font-size: large;
+    text-align: center;
+}
+.pic6{
+    width: 100%;
+}
