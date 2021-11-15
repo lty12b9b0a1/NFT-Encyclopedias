@@ -25,7 +25,7 @@ const children = [
     <Option key={3}>Popularity</Option>,
   ];
 
-export default class EntryList extends Component {
+export default class Created extends Component {
 
     
     constructor() {
@@ -36,6 +36,7 @@ export default class EntryList extends Component {
             isheld:0,
             issell:0,
             iscreate:0,
+            accounts:[],
         }
     }
 
@@ -43,38 +44,62 @@ export default class EntryList extends Component {
 
     }
 
-    componentWillMount() {
-        
-        axios
-        .post(mainurl+"/get_entry")
-        .then((res) => {
-            console.log(res.data)
-            if(res.data){
-                for(let i=0;i<=res.data.length-1;i++){
-                    this.state.data.push({
-                        id:res.data[i].id,
-                        entryname:res.data[i].entryname,
-                        entryimgurl:res.data[i].entryimgurl,
-                        entryoverview:res.data[i].entryoverview,
-                        owner:res.data[i].owner,
-                        creator:res.data[i].creator,
-                        onsale:res.data[i].onsale,
-                        price:res.data[i].price,
+    async componentWillMount() {
+        let accounts
+        if (web3==null){
+            alert('You need to install MetaMask first')
+            this.props.history.push('/NoWallet')
+        }
+        else{
+            accounts = await web3.eth.getAccounts()
+            if (accounts.length==0){
+                alert('Please choose an account')
+            }
+            axios
+            .post(mainurl+"/get_entry")
+            .then((res) => {
+                console.log(res.data)
+                if(res.data){
+                    for(let i=0;i<=res.data.length-1;i++){
+                        this.state.data.push({
+                            id:res.data[i].id,
+                            entryname:res.data[i].entryname,
+                            entryimgurl:res.data[i].entryimgurl,
+                            entryoverview:res.data[i].entryoverview,
+                            owner:res.data[i].owner,
+                            creator:res.data[i].creator,
+                            onsale:res.data[i].onsale,
+                            price:res.data[i].price,
+                        })
+                    }
+                    let newdata=[]
+                    for(let i=0;i<=this.state.data.length-1;i++){
+                        if(this.state.data[i].creator==accounts[0])
+                        newdata.push({
+                            entryname:this.state.data[i].entryname,
+                            entryimgurl:this.state.data[i].entryimgurl,
+                            entryoverview:this.state.data[i].entryoverview,
+                            owner:this.state.data[i].owner,
+                            creator:this.state.data[i].creator,
+                            onsale:this.state.data[i].onsale,
+                            price:this.state.data[i].price,
+                        })
+                    }
+                    this.setState({
+                        accounts:accounts,
+                        data:this.state.data,
+                        tempdata:newdata
                     })
                 }
-                this.setState({
-                    data:this.state.data,
-                    tempdata:this.state.data
-                })
-            }
-        }).catch((error) => {
-            alert(error);
-        })
+            }).catch((error) => {
+                alert(error);
+            })
+        }
         
     }
 
     showentry=(e)=>{
-        console.log(this.props)
+        console.log(e)
         this.props.history.push(  '/EntryInfo/'+e.entryname )
     }
     categorychange=(e)=>{
@@ -95,7 +120,7 @@ export default class EntryList extends Component {
                 }
             }
             for(let i=0;i<=this.state.data.length-1;i++){
-                if((this.state.isheld==0||this.state.data[i].owner=="0")&&(this.state.iscreate==0||this.state.data[i].creator=="0")&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
+                if((this.state.isheld==0||this.state.data[i].owner==this.state.accounts[0])&&(this.state.iscreate==0||this.state.data[i].creator==this.state.accounts[0])&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
                 newdata.push({
                     entryname:this.state.data[i].entryname,
                     entryimgurl:this.state.data[i].entryimgurl,
@@ -119,7 +144,7 @@ export default class EntryList extends Component {
                 }
             }
             for(let i=0;i<=this.state.data.length-1;i++){
-                if((this.state.isheld==0||this.state.data[i].owner=="0")&&(this.state.iscreate==0||this.state.data[i].creator=="0")&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
+                if((this.state.isheld==0||this.state.data[i].owner==this.state.accounts[0])&&(this.state.iscreate==0||this.state.data[i].creator==this.state.accounts[0])&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
                 newdata.push({
                     entryname:this.state.data[i].entryname,
                     entryimgurl:this.state.data[i].entryimgurl,
@@ -142,7 +167,7 @@ export default class EntryList extends Component {
                 }
             }
             for(let i=0;i<=this.state.data.length-1;i++){
-                if((this.state.isheld==0||this.state.data[i].owner=="0")&&(this.state.iscreate==0||this.state.data[i].creator=="0")&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
+                if((this.state.isheld==0||this.state.data[i].owner==this.state.accounts[0])&&(this.state.iscreate==0||this.state.data[i].creator==this.state.accounts[0])&&(this.state.issell==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
                 newdata.push({
                     entryname:this.state.data[i].entryname,
                     entryimgurl:this.state.data[i].entryimgurl,
@@ -159,35 +184,14 @@ export default class EntryList extends Component {
             tempdata:newdata
         })
     }
-    conditionchange=async(e)=>{
-        let accounts=[]
+    conditionchange=(e)=>{
         console.log(e)
         let a=0,b=0,c=0;
         for(let i=0;i<=e.length-1;i++){
             if(e[i]=="A"){
-                if (web3==null){
-                    alert('You need to install MetaMask first')
-                    this.props.history.push('/NoWallet')
-                }
-                else{
-                    accounts = await web3.eth.getAccounts()
-                    if (accounts.length==0){
-                        alert('Please choose an account')
-                    }
-                }
                 a=1;
             }
             if(e[i]=="B"){
-                if (web3==null){
-                    alert('You need to install MetaMask first')
-                    this.props.history.push('/NoWallet')
-                }
-                else{
-                    accounts = await web3.eth.getAccounts()
-                    if (accounts.length==0){
-                        alert('Please choose an account')
-                    }
-                }
                 b=1;
             }
             if(e[i]=="C"){
@@ -196,7 +200,7 @@ export default class EntryList extends Component {
         }
         let newdata=[]
         for(let i=0;i<=this.state.data.length-1;i++){
-            if((a==0||this.state.data[i].owner==accounts[0])&&(b==0||this.state.data[i].creator==accounts[0])&&(c==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
+            if((a==0||this.state.data[i].owner==this.state.accounts[0])&&(b==0||this.state.data[i].creator==this.state.accounts[0])&&(c==0||this.state.data[i].onsale==1||this.state.data[i].onsale==2))
             newdata.push({
                 entryname:this.state.data[i].entryname,
                 entryimgurl:this.state.data[i].entryimgurl,
@@ -285,30 +289,6 @@ export default class EntryList extends Component {
                                         <Col span={24}>
                                             <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
                                         </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
-                                        <Col span={24}>
-                                            <Checkbox value="A" style={{ padding:"5%" }} >A</Checkbox>
-                                        </Col>
                                         
                                         </Row>
                                     </Checkbox.Group>
@@ -321,7 +301,7 @@ export default class EntryList extends Component {
                             <Affix offsetTop={10}>
                             <div className="entrylistpart3">
                                 <div >
-                                    <Checkbox.Group  className="entrylistpart3word" style={{ width: '100%' }} onChange={this.conditionchange}>
+                                    <Checkbox.Group  className="entrylistpart3word" style={{ width: '100%' }}defaultValue={['B']} onChange={this.conditionchange}>
                                         <Row>
                                         <Col span={4}>
                                             <Checkbox value="A" style={{ fontSize:"80%" }} >Held entries<SketchOutlined /></Checkbox>

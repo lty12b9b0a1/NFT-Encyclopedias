@@ -242,3 +242,218 @@
 .pic6{
     width: 100%;
 }
+.create{
+    background-color: rgb(235, 235, 235);
+}
+.createpart1{
+    margin-top:5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.createpart21{
+    font-size: 200%;
+    font-weight: 500;
+    padding: 3%;
+    margin-top:5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.createpart211{
+    
+    padding: 5%;
+}
+.createpart212{
+    margin: auto;
+    width: 80%;
+    height: 50%;
+    padding: 5%;
+}
+.createentryname{
+    margin-left: 3%;
+    width: 94%;
+}
+.createentrynameword{
+    padding: 2%;
+}
+.createinfoitemword{
+    padding: 2%;
+}
+.createinfoitem1{
+    margin-left: 5%;
+    padding: 2%;
+}
+.createinfoitem2{
+    padding: 2%;
+}
+.createpart22{
+    font-size: 200%;
+    font-weight: 500;
+    padding: 3%;
+    margin-top:5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.createpart23{
+    font-size: 200%;
+    font-weight: 500;
+    padding: 3%;
+    margin-top:5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.createentrycontentword{
+    padding: 2%;
+}
+.createentrycontent{
+    padding: 2%;
+}
+.createsubmitbutton{
+    padding: 5%;
+}
+.createcategoryword{
+    padding: 5%;
+    font-size: 150%;
+    font-weight: 500;
+}
+.createcategory{
+    padding: 5%;
+    font-size: 100%;
+    font-weight: 500;
+}
+.test111{
+    width: 100%;
+    font-style: italic;
+    padding: 5%;
+    white-space: pre-wrap;
+    word-break:break-all;
+}
+
+.createsell{
+    background-color: rgb(235, 235, 235);
+}
+.createsellpart1{
+    margin-top:5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.createsellpart1word{
+    padding: 2%;
+    font-size: 200%;
+    font-weight: 500;
+}
+
+
+.entrylist{
+    background-color: rgb(235, 235, 235);
+}
+.entrylistpart1{
+    margin-top:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.entrylistpart1word{
+    padding: 1.5%;
+    font-size: 300%;
+    font-weight: 500;
+}
+.entrylistpart3{
+    margin-top:5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(236, 251, 255);
+    border-radius: 5px;
+}
+.entrylistpart3word{
+    padding: 1%;
+    font-size: 200%;
+    font-weight: 500;
+}
+.entrylistpart2{
+    margin-top:5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.entrylistpart2word{
+    padding: 5%;
+    font-size: 150%;
+    font-weight: 500;
+}
+.entrylistpart2c{
+    padding: 5%;
+    font-size: 100%;
+    font-weight: 500;
+}
+.entrylistpart4{
+    margin-top:10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 5px;
+}
+.entrylistpart4word{
+    padding: 0.5%;
+    font-size: 200%;
+    font-weight: 500;
+}
+.ant-cascader-menu{
+    width: 40%;
+    min-width:160px;
+    height: 20%;
+}
+.ant-upload.ant-upload-select-picture-card{
+    width: 50%;
+}
+.entrylistentryname{
+    font-size: 200%;
+    font-style:normal;
+}
+.entryinfobody{
+    width: 100%;
+    padding: 5%;
+    font-size: 50%;
+    white-space: pre-wrap;
+    word-break:break-all;
+    overflow: hidden;
+}
+.entryinfooverview{
+    padding: 5%;
+    font-size: 50%;
+    font-style: italic;
+}
+.entryinfoimg{
+    margin-left: 5%;
+}
+.notfoundentryword{
+    margin: auto;
+    width: 70%;
+    padding: 3%;
+    text-align: center;
+    font-style:italic;
+    font-weight: 500;
+    font-size: 200%;
+}
+.bodyeditor{
+    font-size: 150%;
+    padding: 2%;
+}
+.entrystate{
+    font-weight: 500;
+    
+}

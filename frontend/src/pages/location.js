@@ -1,1 +1,2 @@
-export const serverUrl = "http://127.0.0.1:3000"
+const mainurl = "http://127.0.0.1:2333"
+export default mainurl

@@ -68,7 +68,7 @@ export default class Support extends Component {
                                         The best way to donate is to create an entry in the encyclopedia. This will not only provide convenience for those seeking analysis, but also bring benefits to you and us. Of course, you can donate directly to our account.
                                     </div>
                                     <div className="part512b">
-                                        <Button size="large" type="primary" ghost onClick={() => this.props.history.push('./Create')}>Create now</Button>
+                                        <Button size="large" type="primary" ghost onClick={() => this.props.history.push('./jump/Create')}>Create now</Button>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <Button size="large" type="primary" ghost onClick={() => this.props.history.push('./NoWallet')}>Donate 0.1 Ethereum</Button>
                                     </div>

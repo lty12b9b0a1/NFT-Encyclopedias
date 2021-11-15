@@ -5,6 +5,7 @@ import { DownOutlined,SearchOutlined } from '@ant-design/icons'
 // import ManagerCenter from '../ManagerCenter/ManagerCenter'
 // import StudentCenter from '../StudentCenter/StudentCenter'
 import "./whole.css"
+import mainurl from "../location"
 import { Color } from '@antv/attr'
 import HomePage from './HomePage'
 import EntryInfo from './EntryInfo'
@@ -12,12 +13,14 @@ import EntryList from './EntryList'
 import EntryCategory from './EntryCategory'
 import Create from './Create'
 import Held from './Held'
+import Created from './Created'
 import Edit from './Edit'
 import Sell from './Sell'
 import Buy from './Buy'
 import Support from './Support'
 import NotFound from './NotFoundEntry'
 import NoWallet from './NoWallet'
+import Involved from './Involved'
 const menu1 = (
     <Menu>
       <Menu.Item className="menulistitem">
@@ -37,7 +40,7 @@ const menu1 = (
     <Menu>
       <Menu.Item className="menulistitem">
         <a target="_blank" >
-        <Link to={{pathname:"/Create"}}><div className="menulistword">Create an NFT Entry&nbsp;&nbsp;&nbsp;&nbsp;</div></Link>
+        <Link to={{pathname:"/jump/Create"}}><div className="menulistword">Create an NFT Entry&nbsp;&nbsp;&nbsp;&nbsp;</div></Link>
         </a>
       </Menu.Item>
       
@@ -102,6 +105,20 @@ const menu1 = (
     </Menu>
   );
 export default class Whole extends Component {
+  constructor() {
+    super()
+    this.state = {
+
+    }
+  }
+  componentDidMount() {
+  }
+
+  componentWillMount() {
+  }
+  search=(e)=>{
+    window.location.href="http://127.0.0.1:3000/EntryInfo/"+e.target.value
+  }
     render() {
         return (
             <div className="whole">
@@ -160,7 +177,7 @@ export default class Whole extends Component {
                     </Col>
                     <Col span={5}>
                       <div className="menuitem5">
-                        <Input size="large" placeholder="search entries" prefix={<SearchOutlined className="searchico"/>}/>
+                        <Input size="large" placeholder="search entries" prefix={<SearchOutlined className="searchico"/>} onPressEnter={this.search}/>
                       </div>
                     </Col>
                     <Col span={2}>
@@ -185,16 +202,18 @@ export default class Whole extends Component {
                       <Route path="/StudentCenter" component={StudentCenter}></Route> */}
                       <Route path="/HomePage" component={HomePage}></Route>
                       <Route path="/NoWallet" component={NoWallet}></Route>
-                      <Route path="/EntryInfo" component={EntryInfo}></Route>
+                      <Route path="/EntryInfo/:entryname" component={EntryInfo}></Route>
                       <Route path="/EntryList" component={EntryList}></Route>
                       <Route path="/EntryCategory" component={EntryCategory}></Route>
-                      <Route path="/Create" component={Create}></Route>
+                      <Route path="/jump/Create" component={Create}></Route>
                       <Route path="/Held" component={Held}></Route>
-                      <Route path="/Edit" component={Edit}></Route>
+                      <Route path="/Created" component={Created}></Route>
+                      <Route path="/Edit/:entryname" component={Edit}></Route>
                       <Route path="/Sell" component={Sell}></Route>
                       <Route path="/Buy" component={Buy}></Route>
+                      <Route path="/Involved" component={Involved}></Route>
                       <Route path="/Support" component={Support}></Route>
-                      <Route path="/NotFound" component={NotFound}></Route>
+                      <Route path="/NotFound/:entryname" component={NotFound}></Route>
                       <Redirect to="/HomePage"></Redirect>
                   </Switch>
                 </div>
